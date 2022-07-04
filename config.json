@@ -1,0 +1,22 @@
+{
+  "metaData": {
+    "name": "ZeNFT",
+    "description": "",
+    "splitFiles": false
+  },
+  "useCustomNames": 0,
+  "deleteDuplicates": false,
+  "generateMetadata": true,
+  "basePath": "/Users/marleeroth/Desktop/ZeNFT/images/",
+  "outputPath": "/Users/marleeroth/Desktop/ZeNFT/output/",
+  "imageUrl": "/",
+  "order": [
+    0,
+    1
+  ],
+  "weights": {
+    "male-1.png": "5",
+    "collared-shirt.png": "2",
+    "white-tee-shirt.png": "3"
+  }
+}
