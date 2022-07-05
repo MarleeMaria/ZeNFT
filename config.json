@@ -1,6 +1,6 @@
 {
   "metaData": {
-    "name": "ZeNFT",
+    "name": "",
     "description": "",
     "splitFiles": false
   },
@@ -11,13 +11,28 @@
   "outputPath": "/Users/marleeroth/Desktop/ZeNFT/output/",
   "imageUrl": "/",
   "order": [
-    0,
-    1
+    5,
+    1,
+    4,
+    2,
+    3,
+    0
   ],
   "weights": {
-    "male-1.png": "3",
-    "Artboard 1.png": "3",
-    "collared-shirt.png": "3",
-    "white-shirt.png": "3"
+    "glasses.png": "10",
+    "green-watch.png": "10",
+    "male-1.png": "10",
+    "black-bald-beard.png": "10",
+    "full-hair-black-beard.png": "10",
+    "full-hair-black.png": "10",
+    "hair-brown.png": "10",
+    "green-geo-top.png": "10",
+    "name-tag-shirt.png": "10",
+    "t-shirt.png": "10",
+    "white-green-shoe.png": "10",
+    "gleen.png": "10",
+    "jar.png": "10",
+    "platform.png": "10",
+    "shadow.png": "10"
   }
 }
