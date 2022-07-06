@@ -7,8 +7,8 @@
   "useCustomNames": 0,
   "deleteDuplicates": true,
   "generateMetadata": true,
-  "basePath": "/Users/marleeroth/Desktop/ZeNFT/images/",
-  "outputPath": "/Users/marleeroth/Desktop/ZeNFT/output/",
+  "basePath": "./images/",
+  "outputPath": "./output/",
   "imageUrl": "/",
   "order": [
     1,
