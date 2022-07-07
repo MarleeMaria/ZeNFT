@@ -7,6 +7,7 @@ function App() {
   
 const [nft, setNft]=useState()
 const [image, setImage]=useState()
+const [rarity, setRarity]=useState()
 
 const [cookies, setCookie ] = useCookies(['click']);
 const [disable, setDisable ] = useState();
@@ -21,6 +22,20 @@ console.log(cookies.click)
 //   setDisable("disabled-link")
 // }  });
 
+
+  const showFile = async (e) => {
+    e.preventDefault()
+    const reader = new FileReader()
+    reader.onload = async (e) => { 
+      const text = (e.target.result)
+      setRarity(text)
+    };
+    reader.readAsText(e.target.files[0])
+  }
+
+function findRarety(){}
+
+  console.log(rarity)
 
 function roll(){
   const number = Math.floor(Math.random() * 416)
@@ -63,6 +78,9 @@ setDisable("disabled-link")
 class={disable}
        >Claim (this can only be done once)</a>
     </button>
+
+
+      <input type="file" onChange={showFile} />
 
     </div>
   );
