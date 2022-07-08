@@ -4,10 +4,9 @@ import { useCookies } from "react-cookie";
 import data from "./output/metadata.json";
 
 function App() {
-  const [nft, setNft] = useState();
   const [image, setImage] = useState();
   const [rarity, setRarity] = useState([]);
-  const [total, setTotal] = useState();
+  const [total, setTotal] = useState(0);
 
   const [cookies, setCookie] = useCookies(["click"]);
   const [disable, setDisable] = useState();
@@ -94,38 +93,9 @@ function App() {
     "green-watch": "240"
   }
 ;
+function rarityCalculate(number){
 
-  // useEffect(() => {
-
-  // if (cookies.click){
-
-  //   setDisable("disabled-link")
-
-  //    import(`./output/${cookies.click}.png`).then((module) => {
-  //     setImage(module.default);
-  //   });
-  // }  });
-  // console.log(data)
-
-  // function findRarety(){
-
-  // }
-
-  // console.log(rarity)
-
-  function capitalizeFirstLetter(string) {
-    return string.charAt(0).toUpperCase() + string.slice(1);
-  }
-
-  function roll() {
-    const number = Math.floor(Math.random() * 406);
-    setNft(number);
-
-    import(`./output/${number}.png`).then((module) => {
-      setImage(module.default);
-    });
-
-    const meta = data[number];
+  const meta = data[number];
 
     const rarity = [];
     meta.attributes.forEach((element) =>
@@ -145,42 +115,68 @@ function App() {
 
     setTotal(total);
 
+}
+
+  useEffect(() => {
+console.log(cookies.click)
+  if (cookies.click){
+
+    setDisable("disabled-link button")
+    rarityCalculate(Number(cookies.click))
+
+       import(`./output/${cookies.click}.png`).then((module) => {
+      setImage(module.default);
+    });
+
+
+  }  },[disable, cookies.click]);
+
+
+  console.log(image)
+  console.log(cookies.click)
+
+  function capitalizeFirstLetter(string) {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+  }
+
+
+
+  function roll() {
+    const number = Math.floor(Math.random() * 406);
     setCookie("click", number, "/");
+
+    import(`./output/${number}.png`).then((module) => {
+      setImage(module.default);
+    });
+
+rarityCalculate(number)
+
   }
 
-  function claim() {
-    setCookie("click", true, "/");
-
-    setDisable("disabled-link");
-  }
+  
   // const table
 
   return (
     <div className="App">
-      <br></br>
+      {/* <br></br> */}
             <img src="https://s3.amazonaws.com/assets.zensurance.ca/zen-logo.png"></img>
       <h1>Welcome to ZeNFT</h1>
       <div>
         <h2>Click Below to roll for you ZeNFT</h2>
       </div>
-      <br></br>
+      {/* <br></br> */}
       <img src={image}></img>
-      <br></br>
+      {/* <br></br> */}
+{!cookies.click && (
+      <button type="button" className={disable} onClick={roll}><span>Roll!</span></button>
+ )}
 
-      {/* <button type="button" className="button" onClick={roll} className={disable}>
-        ROLL!
-      </button> */}
-
-<button type="button" className="button" onClick={roll}><span>Roll!</span></button>
-
-      {/* <p>{rarity.join(", ")}</p> */}
-
-      {image && (
-        <div className="center">
+      {cookies.click && (
+         <div className="center">
 
           <button className="button" >
              <span>
-            <a type="button" href={image}  download onClick={claim}>
+            <a type="button" href={image}  download >
              Claim{" "}
             </a>
             </span>
@@ -193,20 +189,20 @@ function App() {
               <td>Trait Name</td>
               <td>Rarity</td>
             </tr>
-            {rarity.map(({ trait_type, trait_name, rarity }) => (
+            { rarity.length > 0 ? rarity.map(({ trait_type, trait_name, rarity }) => (
               <tr>
                 <td> {capitalizeFirstLetter(trait_type)} </td>
                 <td> {capitalizeFirstLetter(trait_name)} </td>
                 <td> {rarity}</td>
               </tr>
-            ))}
+            )) : ""}
 
             <tr className="center">
               <td colspan="3">Total Rarity: {total.toFixed(3)}</td>
             </tr>
           </table>
         </div>
-      )}
+      )} 
     </div>
   );
 }
