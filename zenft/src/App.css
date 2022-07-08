@@ -1,5 +1,69 @@
-body {
-  background-color: #d7d9db;
+.center {
+  text-align: center;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  font-variant: normal;
+  width: 100%;
+  border: 0 solid #ccc;
+  margin-top: 2rem;
+}
+
+.endorsement-descriptions tr:not(:first-child) {
+  background-color: #e4e8ec;
+}
+table.nomargin {
+  margin-top: 0;
+}
+.normaltable {
+  border: 0 !important;
+}
+tr:nth-child(even) {
+  background: #e4e8ec;
+}
+tr:nth-child(odd) {
+  background: #d9dee3;
+}
+.internal {
+  border: 0;
+  margin-top: 0;
+}
+.internal tr:nth-child(even),
+.internal tr:nth-child(odd) {
+  background: transparent;
+}
+.internal td {
+  padding-left: 0;
+  margin-left: 0;
+  padding-top: 0;
+}
+tr.tableheader {
+  background: #33c0b4;
+  color: #ffffff;
+}
+tr.tableheader_dark {
+  background: #3d4852;
+  color: #ffffff;
+}
+tr.tableheader_dark h4 {
+  color: #33c0b4;
+}
+tr.subheader_dark {
+  background: #b8c2cc;
+}
+.subheader_green {
+  color: #33c0b4;
+}
+td {
+  padding: 0.75rem;
+  vertical-align: middle;
+  font-size: 10pt;
+  border: 0;
+}
+td {
+  vertical-align: top;
 }
 
 .App {
@@ -34,4 +98,109 @@ body {
 
 .disabled-link {
   pointer-events: none;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: white;
+  font-family: "Montserrat", sans-serif;
+
+  text-align: center;
+  margin: 0;
+  font-weight: bold;
+  text-decoration-style: none;
+}
+
+h1 {
+  /* font-size: 18px;
+  line-height: 1rem;
+  padding-left: 40px;
+  font-size: 40px;
+  font-weight: 900;
+  letter-spacing: -1px;
+  text-align: center;
+
+  border: 2px solid white; */
+
+  color: #3d4852;
+
+  font-family: "Montserrat" sans-serif;
+  font-weight: 800;
+  font-size: "1.75rem";
+  line-height: 1.25;
+  letter-spacing: "-0.025em";
+}
+
+h2 {
+  color: #3d4852;
+}
+
+.App-header {
+  background-color: #d7d9db;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #2cbebe;
+}
+
+.disabled-link {
+  pointer-events: none;
+}
+
+.button {
+  display: inline-block;
+  border-radius: 4px;
+  background-color: #33c0b4;
+  border: none;
+  color: #ffffff;
+  text-align: center;
+  font-size: 28px;
+  width: 200px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+  vertical-align: middle;
+  padding: 15px 25px;
+  font-size: 24px;
+  text-decoration-style: none;
+}
+
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button span:after {
+  content: "\00bb";
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button:hover span {
+  padding-right: 25px;
+}
+
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+a {
+  color: white;
+  text-decoration: none;
 }
