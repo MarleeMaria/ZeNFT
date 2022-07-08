@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkzenft=self.webpackChunkzenft||[]).push([[6004],{6004:function(e,a,t){e.exports=t.p+"static/media/230.abedad1372750aa0c730.png"}}]);
