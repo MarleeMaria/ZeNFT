@@ -9,7 +9,7 @@ function App() {
   const [total, setTotal] = useState(0);
 
   const [cookies, setCookie] = useCookies(["click"]);
-  const [disable, setDisable] = useState();
+  const [disable, setDisable] = useState("button");
 
   const legend = {
     "ball-whistle": "13",
